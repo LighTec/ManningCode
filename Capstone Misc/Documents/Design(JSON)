@@ -1,0 +1,146 @@
+[
+  {
+    "name": "AppRunner",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Starts the program",
+      "Creates a thread for the GUI objects (actions, view, etc)",
+      "Creates a GUI actions Object",
+      "Makes the GUI visible"
+    ],
+    "collaborators": [
+      "none",
+      "none",
+      "GUIobjects",
+      "GUIfrontEnd"
+    ]
+  },
+  {
+    "name": "GUIactions",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Set the Pattern",
+      "Load a pattern (as text)",
+      "Save a pattern (as text)",
+      "Pick a color from the GUI",
+      "Demo the LED strip (x amount of boxes on the screen using hex color)"
+    ],
+    "collaborators": [
+      "GUIobject",
+      "none",
+      "none",
+      "GUIfrontEnd",
+      "GuifrontEnd"
+    ]
+  },
+  {
+    "name": "GUIobjects",
+    "superclasses": "GUIobject",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "extends the GUI object"
+    ],
+    "collaborators": [
+      "GUIobject"
+    ]
+  },
+  {
+    "name": "GUIobject",
+    "superclasses": "",
+    "subclasses": "GUIobjects",
+    "type": 1,
+    "responsibilities": [
+      "sets patterns ",
+      "returns properties from the PixelControl when prompted",
+      "Creates a thread, and puts a PixelControl object within it"
+    ],
+    "collaborators": [
+      "PixelControl",
+      "PixelControl",
+      "none(?)"
+    ]
+  },
+  {
+    "name": "PixelControl",
+    "superclasses": "",
+    "subclasses": "GUIobject",
+    "type": 1,
+    "responsibilities": [
+      "Creates a Pixel array",
+      "decodes patterns and sets individual pixels certain colors",
+      "returns properties from Pixels when prompted (strip length, sent serial comms, etc)",
+      "get Pixel values",
+      "Returns whether the LED strip is set up as a matrix (a panel rather than a strip)",
+      "Creates a SerialComms thread and object",
+      "send commands(Strings) to the SerialComms object"
+    ],
+    "collaborators": [
+      "Pixel",
+      "Pixel",
+      "Pixel",
+      "Pixel",
+      "none",
+      "SerialComms",
+      "SerialComms"
+    ]
+  },
+  {
+    "name": "Pixel",
+    "superclasses": "RGB",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Set a color on an individual LED",
+      "set an average Color on a individual LED",
+      "set a smart average on a individual LED",
+      "get the x and y position of this LED"
+    ],
+    "collaborators": [
+      "RGB",
+      "RGB",
+      "RGB"
+    ]
+  },
+  {
+    "name": "RGB",
+    "superclasses": "",
+    "subclasses": "Pixel",
+    "type": 2,
+    "responsibilities": [
+      "Set Red",
+      "Set Green",
+      "Set Blue",
+      "Get Red",
+      "Get Green",
+      "Get Blue"
+    ],
+    "collaborators": [
+      "Pixel",
+      "Pixel",
+      "Pixel"
+    ]
+  },
+  {
+    "name": "SerialComms",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 2,
+    "responsibilities": [
+      "Return if it can send another command yet",
+      "Return any Strings sent from the Arduino",
+      "Get a command and send it to the buffer",
+      "Create an array of Strings as a command buffer"
+    ],
+    "collaborators": [
+      "none",
+      "none",
+      "PixelControl",
+      "none"
+    ]
+  }
+]

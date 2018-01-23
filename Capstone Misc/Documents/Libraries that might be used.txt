@@ -1,0 +1,10 @@
+JTransforms		:Visualization framework and music rendering, realtime audio processing
+RXTX			:Serial Communications
+Java sound API		:Sampling Sound
+Apache Commons Lang	:Multithreading and other goodies
+JArduino		:Serial communications simplified for arduinos
+Ardulink		:Better serial communication than RXTX, recommended- work with this one
+
+Libraries within Oracle that should help:
+
+http://docs.oracle.com/javase/tutorial/uiswing/misc/keybinding.html	:Keybinding, key capture in a clunky way. If put in its own background thread, it could be used as a key recorder for responses within the program when a key is pressed.

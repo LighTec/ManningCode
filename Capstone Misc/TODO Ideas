@@ -1,0 +1,4 @@
+Custom event logger- Event[0] style. Use a public static method within its own class with 3 callables: setPath(String) which sets where the log should go when printed, addEvent(String) which adds an event to the current stack, and panic() which prints out the stack at the requested folder.
+Meant to be used to help debug, and when something goes into a failure mode, e.g. catching an exception that cannot be corrected, panic() should be called.
+
+Pattern compiler/ creation- Uses strings and a custom class to parse the String, and then uses math and loops and timers to create the requested patterns. Should have a for loop, a wait timer, a setter, and a color shifter (for rainbow). Other functions should be implemented as seen fit.

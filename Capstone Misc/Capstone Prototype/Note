@@ -1,0 +1,1 @@
+ArduinoComm2 and jSerialComm-1.3.11.jar are both libraries to be used with the prototype. They allow simplified serial to the Arduino, or any other device allowing communication over USB.
